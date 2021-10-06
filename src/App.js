@@ -1,9 +1,11 @@
 import React from "react"
 import './styles.css'
 
+import Home from "./components/Home";
+
 function App() {
   return (
-     <h1>Hello World</h1>
+     <Home />
   );
 }
 
