@@ -94,6 +94,7 @@ const Home = () => {
                              <br/>
 
                              <button className="btn btn-primary btn-pay" onClick={postData}>Pay Now</button>
+                             <div> <a style= "width: 135px; background-color: #1065b7; text-align: center; font-weight: 800; padding: 11px 0px; color: white; font-size: 12px; display: inline-block; text-decoration: none; " href='https://pmny.in/5Ijlq29CKxM7' > Pay Now </a> </div>
                              </div>
                              </form>
                          </div>
