@@ -1,9 +1,11 @@
 import React,{useState} from 'react'
 import image from "../images/Card.png"
+import axios from 'axios'
 import { TextField } from '@material-ui/core'
 
-const Home = () => {
+const Home1 = () => {
 
+    console.log("Welcome to home page");
     const [user, setUser] = useState({
         fname:"",
         email:"",
@@ -20,6 +22,7 @@ const Home = () => {
         setUser({...user, [name] :value });
     }
 
+    console.log("1234");
     const postData = async(event)=>{
 
         event.preventDefault();
@@ -58,6 +61,66 @@ const Home = () => {
         }
         } ;
 
+        const hash= 'c9a35e8e797ace036a944e7f4111ac36a01fe6919e10bb03e5f39fa2260b8d6f22306cf96f3f2189b154bbd73482669cfa7f2dce563f5ffcc89a8dbd69fdc39a';
+
+        const getPayu = async() =>{
+            console.log("Welcome to payu");
+
+             if(hash){
+                 const res = await axios.post('https://sandboxsecure.payu.in/_payment',
+                 {
+                    headers:{
+                        "Content-Type":"application/json",
+                        'Access-Control-Allow-Origin': '*'
+                 },
+                    data:JSON.stringify({
+                        key:"F2VkxKMp",
+                        amount:10,
+                        txnid:"2300",
+                        email:"tasu2612@gmail.com",
+                        productinfo:"FeroOccasions",
+                        firstname:"Tanya",
+                        udf1:"Sharma",
+                        udf2:"qwerty",
+                        udf3:"9876543321",
+                        udf4:"One Way",
+                        udf5:"",
+                 }),
+                 
+             })
+        
+    }}
+    console.log("Data submitted");
+    // if(hash){
+    //         const resp = await axios({
+    //           method: 'POST',
+    //           url:'https://secure.payu.in/_payment',
+    //           data:JSON.stringify({
+    //               key:"F2VkxKMp",
+    //               amount:10,
+    //               txnid:"2300",
+    //               email:"tasu2612@gmail.com",
+    //               productinfo:"FeroOccasions",
+    //               firstname:"tanya",
+    //               udf1:"sharma",
+    //               udf2:"qwerty",
+    //               udf3:"9876453",
+    //               udf4:"One Way",
+    //               udf5:"Model",
+    //               phone:"9876543321",
+    //               surl:'http://staging.ferofly.com/Booking/FeroOccasions/BookingConfirmed',
+    //               furl:'https://test.payumoney.com/mobileapp/payumoney/failure.php',
+    //               service_provider:'payu_paisa',
+    //               hash:"c9a35e8e797ace036a944e7f4111ac36a01fe6919e10bb03e5f39fa2260b8d6f22306cf96f3f2189b154bbd73482669cfa7f2dce563f5ffcc89a8dbd69fdc39a",
+    //               merchantid:'7321925'
+    //           }),
+    //           headers:{
+    //             'Content-type': 'application/x-www-form-urlencoded'
+    //           }
+    //         })
+        
+
+
     return (
         <>
             <div className="container">
@@ -93,8 +156,10 @@ const Home = () => {
                              <TextField id="standard-basic" className="input-box" value={user.country} onChange={getUserData} type="text"  name="country" label="Country" variant="standard" autoComplete="off" required/>
                              <br/>
 
-                             <button className="btn btn-primary btn-pay" onClick={postData}>Pay Now</button>
-                             {/* <div> <a style= "width: 135px; background-color: #1065b7; text-align: center; font-weight: 800; padding: 11px 0px; color: white; font-size: 12px; display: inline-block; text-decoration: none; " href='https://pmny.in/5Ijlq29CKxM7' > Pay Now </a> </div> */}
+                             {/* <button className="btn btn-primary btn-pay" onClick={postData}>Pay Now</button> */}
+
+                             <button type="submit" className="btn btn-primary btn-pay" onClick={getPayu}>PayU Gateway</button>
+                             
                              </div>
                              </form>
                          </div>
@@ -105,4 +170,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home1
