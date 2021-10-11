@@ -40,6 +40,22 @@ img{
     font-weight: bold;
 }
 
+.navbar{
+    background-color: #154abb;
+    padding: 3px 80px;
+}
+
+.navbar .navbar-brand{
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: 2px;
+    font-size: 35px;
+}
+.navbar .nav-item .nav-link{
+    color: #fff;
+    font-weight: bold;
+}
+
 @media screen and (max-width:400px) {
     img{
         width: 100%;
