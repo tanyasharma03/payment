@@ -71,7 +71,7 @@ const Home1 = () => {
                  {
                     headers:{
                         "Content-Type":"application/json",
-                        'Access-Control-Allow-Origin': '*'
+                        "Origin": "*"
                  },
                     data:JSON.stringify({
                         key:"F2VkxKMp",
