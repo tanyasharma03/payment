@@ -10,14 +10,14 @@ const Navbar = () => {
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
+                    {/* <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                            <a class="nav-link" href="/signup">Signup</a>
                       </li>
                      <li class="nav-item">
                           <a class="nav-link" href="/">LogIn</a>
                      </li>
-                  </ul>
+                  </ul> */}
     
                 </div>
           </nav>
