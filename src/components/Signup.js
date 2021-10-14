@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import img from "../images/Signup.png"
 import { TextField } from '@material-ui/core'
+import {auth} from "../firebase"
 
 const Signup = () => {
 
@@ -17,7 +18,7 @@ const Signup = () => {
         setLogin({...login ,[name]:value});
     }
 
-    const handlesubmit =(e)=>{
+    const handlesubmit =async (e)=>{
        e.preventDefault();
 
        const {email,password} = login;
@@ -31,6 +32,16 @@ const Signup = () => {
                password:""
            })
        }
+       
+       try{
+        const result = await auth.createUserWithEmailAndPassword(email,password);
+        alert("Details entered")
+       }catch(err){
+           console.log(err)
+           alert("error occured")
+       }
+
+       
     }
 
 

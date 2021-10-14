@@ -71,7 +71,12 @@ const Home1 = () => {
                  {
                     headers:{
                         "Content-Type":"application/json",
-                        "Origin": "*"
+                        'Access-Control-Allow-Origin' : '*',
+                        'Access-Control-Allow-Methods':'GET,PUT,POST,DELETE,PATCH,OPTIONS',
+                        // "Access-Control-Allow-Origin":'http://localhost:3000/home',
+                        // 'Origin': 'https://sandboxsecure.payu.in/_payment',
+                        // 'Access-Control-Request-Method': 'POST',
+                        // 'Access-Control-Request-Headers': 'Authorization, Content-Type'
                  },
                     data:JSON.stringify({
                         key:"F2VkxKMp",
