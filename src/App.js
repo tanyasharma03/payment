@@ -1,22 +1,15 @@
-import React from "react"
-import {Route, Switch} from "react-router"
-import { BrowserRouter } from "react-router-dom";
-import './styles.css'
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import Payment from "./payment/payuMoney";
+import Response from "./payment/response";
+import './bootstrap.min.css';
 
-import Home1 from "./components/Home";
-import Navbar from "./components/Navbar"
-
-const App=()=> {
-  return (
-    <BrowserRouter>
-         <Navbar/>
-        <Switch>
-          <Route path="/" exact><Home1 /></Route>
-        </Switch>
-    </BrowserRouter>
-        
-     
-  );
+export default function App(){
+    return(
+        <BrowserRouter>
+          <Switch>
+              <Route exact path='/'><Payment /></Route>
+              <Route path='/response'><Response/></Route>
+          </Switch>
+        </BrowserRouter>
+    )
 }
-
-export default App;
