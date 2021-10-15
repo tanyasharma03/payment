@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react"
 import { Container, Col, Row, Form, FormLabel, FormControl, Button} from 'react-bootstrap'
-import './styles.css'
+// import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Axios from 'axios'
 
@@ -34,7 +34,7 @@ export default function Payment(){
   const [surl] = useState('http://localhost:3200/response');
   const [furl] = useState('http://localhost:3200/response');
   const [serviceProvider] = useState('payu_paisa');
-  const [hash,setHash] = useState('');
+  const [hash,setHash] = useState('c9a35e8e797ace036a944e7f4111ac36a01fe6919e10bb03e5f39fa2260b8d6f22306cf96f3f2189b154bbd73482669cfa7f2dce563f5ffcc89a8dbd69fdc39a');
 
 
   const calcHash = (e) =>{

@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from "react"
 import { Container, Col, Row} from 'react-bootstrap'
-import './styles.css'
+// import './styles.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Axios from 'axios'
 
