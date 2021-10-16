@@ -25,7 +25,7 @@ export default function Payment(){
   const [title] = useState('React Js Redirect Checkout');
   const [key,setKey] = useState('F2VkxKMp');
   const [salt] = useState('riAmnpfqiU');
-  const [txnid, setTxnId] = useState('txn' + Math.round(Math.random(1000, 5000)*10000));
+  const [txnid, setTxnId] = useState('ORD916')
   const [amount, setAmount] = useState('');
   const [firstname,setFirstName] = useState('');
   const [email, setEmail] = useState('');
@@ -34,7 +34,8 @@ export default function Payment(){
   const [surl] = useState('http://localhost:3200/response');
   const [furl] = useState('http://localhost:3200/response');
   const [serviceProvider] = useState('payu_paisa');
-  const [hash,setHash] = useState('c9a35e8e797ace036a944e7f4111ac36a01fe6919e10bb03e5f39fa2260b8d6f22306cf96f3f2189b154bbd73482669cfa7f2dce563f5ffcc89a8dbd69fdc39a');
+  const [udf5] = useState('BOLT_KIT_NODE_JS');
+  const [hash,setHash] = useState('4b0aa4747a000ccda22ced61734d8171a29202cc3f71d6215cf23cfd41221e2c3ac4cdb44da82583bd6674b4d5c1a9cb826a7667912eebb2de28ff08d956da05');
 
 
   const calcHash = (e) =>{
@@ -119,8 +120,12 @@ export default function Payment(){
           <Col sm><FormControl type="text" name="service_provider" value={serviceProvider} readOnly></FormControl></Col>
         </Row>
         <Row className="pt-sm-2">
+          <Col sm><FormLabel>UDF</FormLabel></Col>
+          <Col sm><FormControl type="text" name="udf5" value='BOLT_KIT_NODE_JS' readOnly></FormControl></Col>
+        </Row>
+        <Row className="pt-sm-2">
           <Col sm><FormLabel>Hash</FormLabel></Col>
-          <Col sm><FormControl type="" name="hash" value={hash} readOnly></FormControl></Col>
+          <Col sm><FormControl type="" name="hash" value='4b0aa4747a000ccda22ced61734d8171a29202cc3f71d6215cf23cfd41221e2c3ac4cdb44da82583bd6674b4d5c1a9cb826a7667912eebb2de28ff08d956da05' readOnly></FormControl></Col>
         </Row>
         <Row className="pt-sm-2">
           <Col sm><Button type="submit">Pay</Button></Col>

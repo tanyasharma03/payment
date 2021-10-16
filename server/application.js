@@ -30,6 +30,10 @@ app.post('/hash', (req,res)=>{
     amount = req.body.amount;
 
     let prodinfo = req.body.prodinfo;
+});
+
+app.post('/getRresponse', (req,res) =>{
+     res.send(req.body);
 })
 
 app.listen(port, function(){
