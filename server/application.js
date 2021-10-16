@@ -5,6 +5,12 @@ const crypto = require('crypto');
 
 
 const app = express();
+
+app.use(express.static(__dirname + '/'));
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+app.set('views', __dirname);
+
 const port = 3200;
 
 let key='';
@@ -31,6 +37,21 @@ app.post('/hash', (req,res)=>{
 
     let prodinfo = req.body.prodinfo;
 });
+
+app.post('/response',(req,res)=>{
+    var key = req.body.key;
+	var salt = req.body.salt;
+	var txnid = req.body.txnid;
+	var amount = req.body.amount;
+	var productinfo = req.body.productinfo;
+	var firstname = req.body.firstname;
+	var email = req.body.email;
+	var udf5 = req.body.udf5;
+	var resphash = req.body.hash;
+
+    res.render(__dirname + '/success.html', {key: key,txnid: txnid,amount: amount, productinfo: productinfo, 
+        firstname: firstname, email: email,resphash: resphash});
+})
 
 app.post('/getRresponse', (req,res) =>{
      res.send(req.body);
